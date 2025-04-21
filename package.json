@@ -1,0 +1,16 @@
+{
+  "name": "ui-testing-agent",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@modelcontextprotocol/sdk": "^1.10.1",
+    "@playwright/mcp": "^0.0.13"
+  }
+}

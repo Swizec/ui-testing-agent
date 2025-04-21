@@ -1,7 +1,7 @@
 import { Anthropic } from "@anthropic-ai/sdk";
 import {
-    MessageParam,
-    Tool,
+    type MessageParam,
+    type Tool,
 } from "@anthropic-ai/sdk/resources/messages/messages.mjs";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
@@ -30,7 +30,7 @@ export class MCPClient {
 
     async connectToServer(serverScriptPath: string) {
         try {
-            const isJs = serverScriptPath.endsWith(".js");
+            const isJs = serverScriptPath.endsWith(".ts");
             const isPy = serverScriptPath.endsWith(".py");
             if (!isJs && !isPy) {
                 throw new Error("Server script must be a .js or .py file");

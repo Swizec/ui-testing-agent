@@ -12,6 +12,8 @@ if (!ANTHROPIC_API_KEY) {
     throw new Error("ANTHROPIC_API_KEY is not set");
 }
 
+const MODEL = "claude-3-7-sonnet-20250219";
+
 export class MCPClient {
     private mcp: Client;
     private anthropic: Anthropic;
@@ -74,7 +76,7 @@ export class MCPClient {
         ];
 
         const response = await this.anthropic.messages.create({
-            model: "claude-3-5-sonnet-20241022",
+            model: MODEL,
             max_tokens: 1000,
             messages,
             tools: this.tools,
@@ -109,7 +111,7 @@ export class MCPClient {
                 });
 
                 const response = await this.anthropic.messages.create({
-                    model: "claude-3-5-sonnet-20241022",
+                    model: MODEL,
                     max_tokens: 1000,
                     messages,
                 });
